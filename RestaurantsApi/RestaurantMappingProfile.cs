@@ -18,7 +18,11 @@ namespace RestaurantsApi
             CreateMap<CreateRestaurantDto, Restaurant>()
                 .ForMember(r => r.Addres, c => c.MapFrom(dto => new Addres() 
                 {City = dto.City, PostalCode = dto.PostalCode, Street = dto.Street }));
-            
+
+            CreateMap<UpdateRestaurantDto, Restaurant>()
+                .ForMember(r => r.Name, c => c.MapFrom(c => c.Name))
+                .ForMember(r => r.Description, c => c.MapFrom(c => c.Descrption))
+                .ForMember(r => r.HasDelivery, c => c.MapFrom(c => c.HasDelivery));
 
             
         }      
