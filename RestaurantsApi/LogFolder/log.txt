@@ -1,0 +1,1 @@
+2022-08-17 19:23:58.6284|WARN|RestaurantsApi.Services.RestaurantServices|Restaurant with id: 100 DELETE action invoked
