@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using RestaurantsApi.Exceptions;
 using System;
 using System.Threading.Tasks;
 
@@ -17,6 +18,11 @@ namespace RestaurantsApi.Middleware
             try
             {
                 await next.Invoke(context);
+            }
+            catch(NotFoundExceptions notFoundExceptions)
+            {
+                context.Response.StatusCode = 404;
+                await context.Response.WriteAsync(notFoundExceptions.Message);
             }
             catch (Exception e)
             {
