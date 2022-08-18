@@ -41,7 +41,7 @@ namespace RestaurantsApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, RestaurantSeeder seeder)
         {
-            //seeder.Seed();
+            seeder.Seed();
 
             if (env.IsDevelopment())
             {

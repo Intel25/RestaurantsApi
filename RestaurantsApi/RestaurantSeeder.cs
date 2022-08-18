@@ -1,6 +1,7 @@
 ﻿using RestaurantsApi.Entity;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace RestaurantsApi
 {
@@ -29,7 +30,7 @@ namespace RestaurantsApi
         {
             var restaurants = new List<Restaurant>();
             {
-                new Restaurant()
+                restaurants.Add(new Restaurant
                 {
                     Name = "KFC",
                     Category = "FastFood",
@@ -56,9 +57,9 @@ namespace RestaurantsApi
                         Street = "Długa 5",
                         PostalCode = "30-001"
                     }
-                };
+                });
 
-                new Restaurant()
+                restaurants.Add(new Restaurant
                 {
                     Name = "McDonald",
                     Category = "FastFood",
@@ -84,7 +85,7 @@ namespace RestaurantsApi
                         Street = "Nowolipki 5",
                         PostalCode = "05-055"
                     }
-                };
+                });
 
                 return restaurants;
             }
